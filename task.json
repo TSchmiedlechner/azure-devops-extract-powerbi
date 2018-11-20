@@ -1,0 +1,38 @@
+{
+  "id": "tschmiedlechner-extract-powerbi",
+  "name": "ExtractPowerBI",
+  "friendlyName": "Extract Power BI templates",
+  "description": "Takes one or more Power BI template files (*.pbit) and extracts them to a specific folder, creating subfolders matching the file names.",
+  "helpMarkDown": "",
+  "category": "Utility",
+  "author": "Tom Schmiedlechner",
+  "version": {
+    "Major": 0,
+    "Minor": 1,
+    "Patch": 0
+  },
+  "instanceNameFormat": "Extract Power BI templates",
+  "inputs": [
+    {
+      "name": "sourceFolder",
+      "type": "filePath",
+      "label": "Template file patterns",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Source folder containing the *.pbit files that will be extracted."
+    },
+    {
+      "name": "destinationFolder",
+      "type": "filePath",
+      "label": "Destination folder",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Destination folder into which archive files should be extracted.  Use [variables](https://go.microsoft.com/fwlink/?LinkID=550988) if files are not in the repo. Example: $(agent.builddirectory)"
+    }
+  ],
+  "execution": {
+    "Node": {
+      "target": "index.js"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "azure-devops-extract-powerbi",
+  "version": "0.0.1",
+  "description": "Azure DevOps task to extract Power BI templates (useful for versioning them)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TSchmiedlechner/azure-devops-extract-powerbi.git"
+  },
+  "author": "Tom Schmiedlechner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TSchmiedlechner/azure-devops-extract-powerbi/issues"
+  },
+  "homepage": "https://github.com/TSchmiedlechner/azure-devops-extract-powerbi#readme",
+  "dependencies": {
+    "azure-pipelines-task-lib": "^2.7.5",
+    "filehound": "^1.16.4",
+    "node-7z": "^0.4.0",
+    "vss-web-extension-sdk": "^5.141.0"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.9",
+    "@types/q": "^1.5.1"
+  }
+}
