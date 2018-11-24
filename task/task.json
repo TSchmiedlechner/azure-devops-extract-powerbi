@@ -1,0 +1,76 @@
+{
+  "id": "08ec21a6-651f-44cc-905e-50d92e58ca19",
+  "name": "ExtractPowerBI",
+  "friendlyName": "Extract Power BI templates",
+  "description": "Takes one or more Power BI template files (*.pbit) and extracts them to a specific folder, creating subfolders matching the file names.",
+  "helpMarkDown": "",
+  "category": "Utility",
+  "author": "Tom Schmiedlechner",
+  "version": {
+    "Major": 0,
+    "Minor": 1,
+    "Patch": 0
+  },
+  "instanceNameFormat": "Extract Power BI templates",
+  "inputs": [
+    {
+      "name": "archiveFilePatterns",
+      "type": "multiLine",
+      "label": "Source files",
+      "defaultValue": "*.zip",
+      "required": true,
+      "helpMarkDown": "File paths or patterns of the Power BI template files to extract.  Supports multiple lines of minimatch patterns.  [More Information](https://go.microsoft.com/fwlink/?LinkId=800269)",
+      "properties": {
+        "resizable": "true",
+        "rows": "4"
+      }
+    },
+    {
+      "name": "destinationFolder",
+      "type": "filePath",
+      "label": "Destination folder",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Destination folder into which template files should be extracted. Subfolders will be created for all files.  Use [variables](https://go.microsoft.com/fwlink/?LinkID=550988) if files are not in the repo. Example: $(agent.builddirectory)"
+    },
+    {
+      "name": "cleanDestinationFolder",
+      "type": "boolean",
+      "label": "Clean destination folder before extracting",
+      "required": true,
+      "defaultValue": "true",
+      "helpMarkDown": "Select this option to clean the destination directory before archive contents are extracted into it."
+    }
+  ],
+  "execution": {
+    "Node": {
+      "target": "index.js",
+      "argumentFormat": ""
+    }
+  },
+  "messages": {
+    "ExtractDirFailedinFindFiles": "Specified archive: %s can not be extracted because it is a directory.",
+    "ExtractNotFileFailed": "Specified archive: %s can not be extracted because it is not a file.",
+    "ExtractNotAccessibleFile": "Specified archive: %s can not be extracted because it can not be accessed: %s",
+    "SearchInDir": "Searching for: %s under directory: %s",
+    "SearchNonExistDir": "Search failed because the specified search directory: %s does not exist.",
+    "SearchNonDir": "Search failed because the specified search directory: %s is not a directory.",
+    "NoSearchPatternPath": "No path specified for search pattern: %s defaulting to: %s",
+    "ResolveRelativePath": "Relative file path: %s resolving to: %s",
+    "UnzipExtractFile": "Extracting file: %s",
+    "SevenZipExtractFile": "Extracting file: %s",
+    "TarExtractFile": "Extracting file: %s",
+    "ExtractFileFailedMsg": "Extraction failed for file: %s \ncode: %d \nstdout: %s \nstderr: %s \nerror: %s;",
+    "ExtractNonExistFile": "Extraction failed for file: %s because it does not exist.",
+    "ExtractDirFailed": "Extraction failed for file: %s because it is a directory.",
+    "CreateTempDir": "Creating temp folder: %s to decompress: %s",
+    "TempDir": "tempFolder = %s",
+    "DecompressedTempTar": "Decompressed temporary tar from: %s to: %s",
+    "RemoveTempDir": "Removing temp folder: %s",
+    "ExtractFailedCannotCreate": "Extraction failed for file: %s because temporary location could not be created: %s",
+    "FoundFiles": "Found: %d files to extract:",
+    "CleanDestDir": "Cleaning destination folder before extraction: %s",
+    "CreateDestDir": "Creating destination folder: %s",
+    "SucceedMsg": "Successfully extracted all files."
+  }
+}

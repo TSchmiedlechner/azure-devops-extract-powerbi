@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "id": "tschmiedlechner-extract-powerbi",
   "name": "Extract Power BI templates",
-  "version": "0.0.1",
+  "version": "0.0.10",
   "publisher": "tschmiedlechner",
   "targets": [
       {
@@ -11,7 +11,7 @@
   ],    
   "description": "Takes one or more Power BI template files (*.pbit) and extracts them to a specific folder, creating subfolders matching the file names.",
   "categories": [
-      "Build and release"
+      "Azure Pipelines"
   ],
   "icons": {
       "default": "images/extension-icon.png"        
